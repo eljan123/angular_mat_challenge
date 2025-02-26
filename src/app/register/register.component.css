@@ -1,0 +1,185 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .invitation-container {
+    text-align: center;
+    padding: 40px;
+    max-width: 700px;
+    margin: auto;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: #8b5e3c;
+    margin-bottom: 20px;
+    font-family: 'Brush Script MT', cursive;
+  }
+  
+  .couple-name {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #8b5e3c;
+  }
+  
+  .couple-names {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #8b5e3c;
+  }
+  
+  .wedding-date, .venue {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #555;
+  }
+  
+  form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  mat-form-field {
+    width: 80%;
+    margin: 10px 0;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 80%;
+    padding: 10px;
+    font-size: 1.1em;
+  }
+  
+  button.mat-raised-button {
+    background-color: #8b5e3c;
+    color: #fff;
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #6b4a2c;
+  }
+  
+  /*-------------------- Dark Mode Styles --------------------*/
+  body.dark-theme {
+    background-color: #333;
+    color: #f1f1f1;
+  }
+  
+  body.dark-theme .invitation-container {
+    background-color: #444;
+    color: #f1f1f1;
+    border-radius: 15px;
+    padding: 50px;
+  }
+  
+  body.dark-theme h1 {
+    color: #f1f1f1;
+  }
+  
+  body.dark-theme .couple-names {
+    color: #a2d5a2;
+  }
+  
+  body.dark-theme .wedding-date, body.dark-theme .venue {
+    color: #ddd;
+  }
+  
+  mat-slide-toggle {
+    margin: 20px 0;
+  }
+  
+  mat-input-element {
+    font-size: 1.1em;
+  }
+  
+  textarea {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  textarea::placeholder {
+    font-style: italic;
+  }
+  
+  /*------------ Styles for the new checkbox sections --------------*/
+  .attendance-section {
+    margin-top: 20px;
+    text-align: left;
+    width: 80%;
+  }
+  
+  .example-margin {
+    margin: 10px;
+  }
+  
+  .example-list-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .example-list-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .example-list-section li {
+    margin: 5px 0;
+  }
+
+/*------------- Mesage-sent------------- */
+.message-sent {
+  background-color: #e0f7fa;
+  border: 1px solid #00acc1;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  color: #00796b;
+  text-align: left; 
+}
+
+.message-sent strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.message-sent .message-name,
+.message-sent .message-email,
+.message-sent .message {
+  color: #004d40;
+}
+
+.message-sent .message-name::before,
+.message-sent .message-email::before,
+.message-sent .message::before {
+  content: "• "; 
+  color: #00796b;
+}
+
+.message-sent .message-name {
+  margin-top: 10px;
+}
+
+.message-sent .message-email {
+  margin-top: 5px;
+}
+
+.message-sent .message {
+  margin-top: 5px;
+}

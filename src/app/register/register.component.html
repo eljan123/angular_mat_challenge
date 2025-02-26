@@ -1,0 +1,76 @@
+<div>
+  <div class="invitation-container">
+    <h1>Wedding Invitation</h1>
+    <p class="couple-name">Join us in celebrating the wedding of</p>
+    <h2 class="couple-names">
+      <span id="groom-name">Naruto</span> &amp; <span id="bride-name">Hinata</span>
+    </h2>
+
+    <p class="wedding-date">
+      <strong>Date:</strong> December 28, 2032 <br />
+      <strong>Time:</strong> 9:00 AM
+    </p>
+
+    <p class="venue">
+      <strong>Venue:</strong> The Mansion
+    </p>
+    <p>Submitted by: Pamintuan, Eljan Joel Y. | WD - 302</p>
+
+    
+
+    <div class="form-container">
+      <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+        <mat-form-field appearance="fill">
+          <mat-label>Your Name</mat-label>
+          <input matInput placeholder="Enter your name" formControlName="userName" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Enter Email" formControlName="email" />
+          <mat-error *ngIf="formData.controls['email'].invalid && formData.controls['email'].touched">
+            Email is required and must be a valid email.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Add the new section for number of adults and children attending -->
+        <section class="attendance-section">
+          <mat-checkbox formControlName="isAdultAttending">Adult Attending</mat-checkbox>
+          <mat-form-field appearance="fill" *ngIf="formData.controls['isAdultAttending'].value">
+            <mat-label>Number of Adults</mat-label>
+            <input matInput type="number" placeholder="Enter number of adults" formControlName="numAdults" />
+          </mat-form-field>
+
+          <mat-checkbox formControlName="isChildAttending">Child Attending</mat-checkbox>
+          <mat-form-field appearance="fill" *ngIf="formData.controls['isChildAttending'].value">
+            <mat-label>Number of Children</mat-label>
+            <input matInput type="number" placeholder="Enter number of children" formControlName="numChildren" />
+          </mat-form-field>
+        </section>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Message for the Couple</mat-label>
+          <textarea matInput placeholder="Write your message" formControlName="message"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formData.valid">
+          Send Message
+        </button>
+      </form>
+
+      <p *ngIf="submitted" class="message-sent">
+        Thank you for your message! <br />
+        <strong class="message-name">Name:</strong> {{ userName }} <br />
+        <strong class="message-email">Email:</strong> {{ email }} <br />
+        <strong class="message">Message:</strong> {{ message }}
+      </p>
+    </div>
+    <mat-slide-toggle
+      (change)="toggleTheme()"
+      [checked]="isDarkMode"
+      aria-label="Toggle light/dark mode"
+    >
+      Toggle Dark Mode
+    </mat-slide-toggle>
+  </div>
+</div>
